@@ -20,7 +20,8 @@ public class RankAdapter extends BaseAdapter {
     //声明一个动态数组用于存局域网中的设备、ip等数据
     private List<Rank> mData = new ArrayList<Rank>();
     private Context mContext;
-   //构造函数，初始化变量
+
+    //构造函数，初始化变量
     public RankAdapter(Context context, List<Rank> data) {
         mContext = context;
         mData = data;
@@ -60,19 +61,19 @@ public class RankAdapter extends BaseAdapter {
         }
         Rank item = mData.get(position);
         holder.name.setText(item.getUserId());
-        holder.num.setText(position+"");
-        holder.score.setText(item.getScore()+"");
+        holder.num.setText((position + 1) + "");
+        holder.score.setText(item.getScore() + "");
         return convertView;
     }
 
     //列表刷新
-    public void changeData(List<Rank> data){
+    public void changeData(List<Rank> data) {
         mData = data;
         notifyDataSetChanged();
     }
 
     //界面中展示的数据一个是设备名，一个是ip地址
-    class ViewHolder{
+    class ViewHolder {
         TextView name;
         TextView score;
         TextView num;
