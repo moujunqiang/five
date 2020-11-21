@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/bg_list">
+    android:background="@drawable/bg_list"
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/back"
@@ -12,13 +12,67 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:text="返回" />
+    <TextView
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_margin="15dp"
+        android:id="@+id/tv_title"
+        android:textSize="22sp"
+        android:text="排行榜"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_below="@id/tv_title"
+        android:id="@+id/rl_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dip"
+        android:paddingTop="6dip"
+        android:paddingBottom="6dip">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="排名"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:fadingEdge="horizontal"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="用户名"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="积分"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </LinearLayout>
 
     <ListView
+        android:divider="#ececec"
+        android:dividerHeight="1dp"
+        android:layout_below="@id/rl_head"
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/back"
-        android:scrollingCache="@null"
-        />
+        android:scrollingCache="@null" />
 
 </RelativeLayout>
